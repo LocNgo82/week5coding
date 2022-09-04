@@ -1,5 +1,5 @@
 
-// This program maintains  a list of students for a course.
+// This program maintains a list of students for a course.
 // class Menu contains a course object that has name, max class size, and room number.
 class Menu {
     // constructor of the menu
@@ -12,7 +12,7 @@ class Menu {
     // start the menu options
     start() {
         let selection = this.showMainMenuOptions();  // display the menu
-        while (selection != 0) {  // execute the function based on a user input
+        while (selection != 0) {  // use a loop to execute the function based on a user input
             switch (selection) {
                 case '1':  // add student function
                     this.addStudent();
@@ -23,7 +23,7 @@ class Menu {
                 case '3':  // delete student function
                     this.deleteStudent();
                     break;
-                case '4':  // display course info
+                case '4':  // display course information
                     let s1 = this.displayCourse();
                     this.display(s1);
                     break;
@@ -50,7 +50,7 @@ class Menu {
         `);
     }
     
-    // display weather to the browser or to the console.  Use for debug the code
+    // display whether to the browser or to the console.  Use for debug the code
     display(str) {        
         if (typeof window != 'undefined') {  // if it's on a browser, use the alert function to display the string
             alert(str);
@@ -70,7 +70,7 @@ class Menu {
     }
 
     // prompt the user to enter the student name and id
-    // if there is an error for adding the student, display the error message
+    // if there is an error for adding the student, catch the error message
     addStudent() {
         let name = prompt('Enter student name:');
         let id = prompt('Enter student id:');
@@ -84,7 +84,7 @@ class Menu {
     }
 
     // prompt the user to enter the student name
-    // if the student name is not found, display the error message
+    // if the student name is not found, catch an error message
     // else display the student information
     displayStudent() {
         let name = prompt('Enter student name:');
@@ -96,7 +96,7 @@ class Menu {
         }
     }
     // prompt the user to enter the student name
-    // if the student name is not found, display the error message
+    // if the student name is not found, catch an error message
     // else delete student function is successful
     deleteStudent() {
         let name = prompt('Enter student name:');
@@ -147,7 +147,7 @@ class Course {
             throw new Error(`This course ${this.courseName} is full.`);
         }
     }
-    // delete a student form the course
+    // delete a student from the course
     // if a student is not found in the course, throw an error message
     // otherwise, delete the student from the course.
     deleteStudent(studentName) {
@@ -190,7 +190,7 @@ class Course {
 
 // start the program
 let menu = new Menu();  // create a menu object
-menu.start(); // start the prompt
+menu.start(); // start the menu options
   
 
 
